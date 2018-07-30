@@ -10,9 +10,9 @@ services:
     - "80:80"
     - "443:443"
     volumes:
-    - ".\\vol\\nginx\\default.conf:/etc/nginx/conf.d/default.conf"
-    - ".\\vol\\nginx\\ssl:/etc/nginx/ssl"
-    - ".\\vol\\nginx\\html:/usr/share/nginx/html"
+    - "./vol/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    - "./vol/nginx/ssl:/etc/nginx/ssl"
+    - "./vol/nginx/html:/usr/share/nginx/html"
     
   jenkins:
     image: jenkins:alpine
@@ -20,7 +20,7 @@ services:
     networks:
     - jenkins-net
     volumes:
-    - ".\\vol\\jenkins\\home:/var/jenkins_home"
+    - "./vol/jenkins/home:/var/jenkins_home"
 
 networks:
   jenkins-net:
