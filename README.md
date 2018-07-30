@@ -23,6 +23,9 @@ $ cd vol/nginx/ssl
 $ ./create-certificate.sh
 ```
 
+To use an existing certificate instead, simply copy the certificate and key files to the `vol/nginx/ssl`
+directory, and ensure that they are named `cert.pem` (certificate file) and `key.pem` (key file).
+
 ## Usage
 
 Start the containers with:
@@ -38,7 +41,8 @@ $ docker-compose down
 
 Access Jenkins while the containers are running by navigating to `https://jenkins.local` using any web browser.
 You will also need to create an entry in your local hosts file to map `jenkins.local` to `localhost` (or
-`192.168.99.100` if you're using Docker Toolbox).
+`192.168.99.100` if you're using Docker Toolbox). If you are using a your own domain name instead (as described
+in the Customization section above), then use that URL.
 
 When Jenkins first initializes, it generates a random password that is required to log in the first time. The
 password can be obtained with:
